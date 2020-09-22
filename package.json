@@ -1,27 +1,27 @@
 {
-    "name": "shadow-dom-oss",
-    "description": "My amazing LWC app",
+    "name": "custom-html-elements-and-templates",
+    "description": "LWC OSS app with examples to understand Custom Elements and HTML Templates",
     "version": "0.0.1",
     "author": "Alba Rivas",
-    "bugs": "https://github.com/Alba Rivas/shadow-dom-oss/issues",
+    "bugs": "https://github.com/albarivas/custom-html-elements-and-templates/issues",
     "dependencies": {
         "compression": "^1.7.4",
         "express": "^4.17.1",
-        "helmet": "^4.0.0"
+        "helmet": "^4.1.1"
     },
     "devDependencies": {
-        "eslint": "^7.6.0",
-        "husky": "^4.2.5",
-        "lint-staged": "^10.2.11",
-        "lwc-services": "^2.1.4",
-        "prettier": "^2.0.5"
+        "eslint": "^7.9.0",
+        "husky": "^4.3.0",
+        "lint-staged": "^10.4.0",
+        "lwc-services": "^2.2.1",
+        "prettier": "^2.1.2"
     },
     "engines": {
         "node": ">=10.13.0",
         "npm": ">=6.4.1",
         "yarn": ">=1.9.4"
     },
-    "homepage": "https://github.com/Alba Rivas/shadow-dom-oss",
+    "homepage": "https://github.com/albarivas/custom-html-elements-and-templates",
     "husky": {
         "hooks": {
             "pre-commit": "lint-staged"
@@ -39,7 +39,7 @@
             "eslint"
         ]
     },
-    "repository": "Alba Rivas/shadow-dom-oss",
+    "repository": "albarivas/shadow-dom-oss",
     "scripts": {
         "build": "lwc-services build -m production",
         "build:development": "lwc-services build",
