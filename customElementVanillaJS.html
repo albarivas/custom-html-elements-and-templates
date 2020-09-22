@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Custom Elements (Vanilla JS - No template)</title>
+    </head>
+    <style>
+        custom-logo {
+            display: table;
+            margin: 15% auto;
+        }
+        h1 {
+            margin-left: 20%;
+        }
+    </style>
+    <body>
+        <h1>Vanilla JS - No template</h1>
+        <custom-logo
+            company-name="SalesforceDevs"
+            background-color="#009EDB"
+        ></custom-logo>
+        <script>
+            class CustomLogo extends HTMLElement {
+                connectedCallback() {
+                    const span = document.createElement('span');
+                    span.setAttribute(
+                        'style',
+                        `background-color:${this.getAttribute(
+                            'background-color'
+                        )}; color:white; padding:10px; font-size:40px;`
+                    );
+                    span.innerText = this.getAttribute('company-name');
+                    this.appendChild(span);
+                }
+            }
+
+            customElements.define('custom-logo', CustomLogo);
+        </script>
+    </body>
+</html>

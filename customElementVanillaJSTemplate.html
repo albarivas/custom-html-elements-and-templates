@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Custom Elements (Vanilla JS - Template)</title>
+    </head>
+    <style>
+        custom-logo {
+            display: table;
+            margin: 15% auto;
+        }
+        h1 {
+            margin-left: 20%;
+        }
+    </style>
+    <body>
+        <template id="logo-template">
+            <span></span>
+        </template>
+        <h1>Vanilla JS - Template</h1>
+        <custom-logo
+            company-name="SalesforceDevs"
+            background-color="#009EDB"
+        ></custom-logo>
+        <script>
+            class CustomLogo extends HTMLElement {
+                connectedCallback() {
+                    const template = document.getElementById('logo-template');
+                    const clone = template.content.cloneNode(true);
+                    const span = clone.querySelector('span');
+                    span.setAttribute(
+                        'style',
+                        `background-color:${this.getAttribute(
+                            'background-color'
+                        )}; color:white; padding:10px; font-size:40px;`
+                    );
+                    span.innerText = this.getAttribute('company-name');
+                    this.appendChild(clone);
+                }
+            }
+
+            customElements.define('custom-logo', CustomLogo);
+
+            const el = document.createElement('custom-logo');
+            el.companyName = 'SalesforceDevs';
+            el.backgroundColor = '#009EDB';
+            document.querySelector('body').appendChild(el);
+        </script>
+    </body>
+</html>
